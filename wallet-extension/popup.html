@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Multi-Network Wallet</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div id="wallet-container">
+    <h2>Multi-Network Wallet</h2>
+    <div id="wallet-info"></div>
+    <button id="create-wallet-btn">Create New Wallet</button>
+    <button id="load-wallet-btn">Load Existing Wallet</button>
+    <div id="network-selection" style="margin-top: 20px;">
+      <label>Select Network:</label>
+      <select id="network">
+        <option value="ethereum">Ethereum</option>
+        <option value="solana">Solana</option>
+      </select>
+    </div>
+    <button id="sign-transaction-btn" style="margin-top: 20px;">Sign Transaction</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

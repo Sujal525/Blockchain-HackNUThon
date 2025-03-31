@@ -1,38 +1,168 @@
-.App {
-  text-align: center;
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-family: 'Poppins', sans-serif;
+  color: #f0f0f0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
   min-height: 100vh;
+  background: #0b0d15;
+  color: #a2a5b3;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* Sidebar - Glassmorphism Effect */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: rgba(26, 29, 42, 0.6);
   color: white;
+  padding: 30px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  border-radius: 10px 0 0 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+  border: 3px solid transparent;
+  animation: border-glow 5s infinite linear;
+  backdrop-filter: blur(15px);
 }
 
-.App-link {
-  color: #61dafb;
+/* Sidebar Border Animation */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes border-glow {
+  0% {
+    border-image-source: conic-gradient(from 0deg, rgba(0, 255, 255, 0.5), rgba(0, 153, 255, 0.5), rgba(255, 0, 255, 0.5), rgba(255, 153, 0, 0.5), rgba(0, 255, 255, 0.5));
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    border-image-source: conic-gradient(from 360deg, rgba(0, 255, 255, 0.5), rgba(0, 153, 255, 0.5), rgba(255, 0, 255, 0.5), rgba(255, 153, 0, 0.5), rgba(0, 255, 255, 0.5));
   }
+}
+.sidebar {
+  border-image-slice: 1;
+}
+
+/* Sidebar Heading */
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 22px;
+  background: linear-gradient(90deg, #00ffff, #00aaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+/* Sidebar Navigation */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Sidebar Items - Added More Space */
+.sidebar li {
+  margin-bottom: 20px; /* Increased space between buttons */
+}
+
+/* Sidebar Buttons - Only Border Animation */
+.sidebar a {
+  color: white;
+  display: block;
+  padding: 12px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+/* Border Glow Animation */
+.sidebar a::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #ff4500, #00ffff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Hover Effect - Only Border Glows */
+.sidebar a:hover {
+  transform: scale(1.05); /* Slightly grow on hover */
+  border-color: rgba(0, 255, 255, 0.8);
+}
+
+.sidebar a:hover::before {
+  opacity: 1;
+  filter: blur(3px);
+}
+
+/* Content Area */
+.content {
+  flex: 1;
+  margin-left: 280px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+}
+/* Logout Button Styling */
+.sidebar button {
+  width: 100%;
+  padding: 12px 15px;
+  background: transparent;
+  color: white;
+  border: 2px solid transparent;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Border Glow Animation */
+.sidebar button::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #ff4500, #00ffff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Hover Effect - Only Border Glows */
+.sidebar button:hover {
+  transform: scale(1.05);
+  border-color: rgba(0, 255, 255, 0.8);
+}
+
+.sidebar button:hover::before {
+  opacity: 1;
+  filter: blur(3px);
 }

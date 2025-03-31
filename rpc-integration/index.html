@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Data Fetch</title>
+
+    <!-- ✅ Web3.js for Ethereum, BSC, and Polygon -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.0.3/web3.min.js"></script>
+
+</head>
+<body>
+    <h2>Ethereum</h2>
+    <p>Block Number: <span id="eth-block">Loading...</span></p>
+    <p>Gas Price: <span id="eth-gas">Loading...</span></p>
+
+    <h2>Binance Smart Chain</h2>
+    <p>Block Number: <span id="bsc-block">Loading...</span></p>
+
+    <h2>Solana</h2>
+    <p>Solana Price: <span id="solana-price">Loading...</span></p>
+
+    <h2>Polygon (MATIC)</h2>
+    <p>Gas Price: <span id="polygon-gas">Loading...</span></p>
+
+    <!-- ✅ Load script after the page content -->
+    <script src="script.js" type="module"></script>
+</body>
+</html>
