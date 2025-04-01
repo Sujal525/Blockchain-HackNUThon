@@ -3,7 +3,7 @@ def geminiApp(prompt):
     from GeminiHist import data
 
     # Configure your Gemini API key (replace "Abc" with your real key)
-    genai.configure(api_key="AIzaSyBmXVQrxDAiZf2k4RpjC3U5uRXMHsIsiYw")
+    genai.configure(api_key="abc")
     
     generation_config = {
         "temperature": 1,
