@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 import "./OrderBook.css"; // Import custom styles
 
 const OrderBook = () => {
-  const [contractAddress, setContractAddress] = useState("0xaf6f985f7fbdd52906b3f3401342a48cd3ca20f7");
+  const [contractAddress, setContractAddress] = useState("abc");
   const [orders, setOrders] = useState([]);
   const [walletAddress, setWalletAddress] = useState("");
   const [amount, setAmount] = useState("");
@@ -22,7 +22,7 @@ const OrderBook = () => {
   ];
 
   useEffect(() => {
-    if (contractAddress !== "0xaf6f985f7fbdd52906b3f3401342a48cd3ca20f7") {
+    if (contractAddress !== "abc") {
       fetchOrders();
     }
   }, [contractAddress]);
