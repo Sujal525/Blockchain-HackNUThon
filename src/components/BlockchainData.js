@@ -9,7 +9,7 @@ const BlockchainData = () => {
   const [polygonGas, setPolygonGas] = useState("Loading...");
 
   // ✅ RPC URLs
-  const INFURA_API_KEY = "ac94869298ac4a82a3609d69c447601d"; // Replace with actual API key
+  const INFURA_API_KEY = "abc"; // Replace with actual API key
   const ETHEREUM_RPC = `https://mainnet.infura.io/v3/${INFURA_API_KEY}`;
   const BSC_RPC = "https://bsc-dataseed.binance.org/";
   const POLYGON_RPC = "https://polygon-rpc.com/";
