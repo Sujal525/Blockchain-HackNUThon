@@ -2,7 +2,7 @@
 const SOLANA_RPC_URL = "https://rpc.ankr.com/solana";  
 
 // ✅ Ethereum, BSC & Polygon RPC URLs
-const INFURA_API_KEY = "ac94869298ac4a82a3609d69c447601d";  // Replace with actual Infura API key
+const INFURA_API_KEY = "abc";  // Replace with actual Infura API key
 const ETHEREUM_RPC_URL = `https://mainnet.infura.io/v3/${INFURA_API_KEY}`;
 const BSC_RPC_URL = "https://bsc-dataseed.binance.org/";
 const POLYGON_RPC_URL = "https://polygon-rpc.com/";
